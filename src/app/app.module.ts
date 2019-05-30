@@ -19,7 +19,7 @@ import { ResourcesComponent } from './resources/resources.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { MatCardModule } from '@angular/material';
-
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,9 @@ import { MatCardModule } from '@angular/material';
     RoutingModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
