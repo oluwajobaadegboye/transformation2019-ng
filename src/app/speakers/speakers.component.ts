@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./speakers.component.css']
 })
 export class SpeakersComponent implements OnInit {
-
+  panelOpenState = false;
   constructor() { }
 
   ngOnInit() {

@@ -9,11 +9,11 @@
     <mat-tab label="THUR">
       <p>Thursday Schedules goes here</p>
       <mat-list>
+        <mat-divider></mat-divider>
         <mat-list-item *ngFor="let event of thursdayEventList">
-          <mat-divider></mat-divider>
-          <mat-icon mat-list-icon>folder</mat-icon>
-          <h4 mat-line>{{event.name}}</h4>
-          <p mat-line> {{event.venue}} </p>
+          <mat-icon mat-list-icon>schedule_outline</mat-icon>
+          <h4 mat-line><strong>{{event.name}}</strong></h4><span style="position:right;">{{event.time}}</span>
+          <p mat-line>{{event.venue}}</p>
           <mat-divider></mat-divider>
         </mat-list-item>
       </mat-list>

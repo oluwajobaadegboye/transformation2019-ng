@@ -1,0 +1,12 @@
+mat-expansion-panel{
+    margin:7px;
+}
+
+img{
+    border-radius: 50%;
+}
+
+md-user-avatar{
+    text-align: center;
+    width:100%
+}
