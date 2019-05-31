@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -17,9 +17,18 @@ import { SpeakersComponent } from './speakers/speakers.component';
 import { AnnouncementComponent } from './announcement/announcement.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatExpansionModule } from '@angular/material';
-import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AlertComponent } from './directives/alert/alert.component';
+import { AuthGuard } from './guards/AuthGuard ';
+import { AlertService } from './services/AlertService';
+import { AuthenticationService } from './services/AuthenticationService';
+import { UserService } from './services/UserService';
+import { JwtInterceptor } from './helper/JwtInterceptor';
+import { ErrorInterceptor } from './helper/ErrorInterceptor ';
+import { AuthenticatedHomeComponent } from './authenticated-home/authenticated-home.component';
+import { VerifyUserComponent } from './verify-user/verify-user.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +43,10 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
     SpeakersComponent,
     AnnouncementComponent,
     ResourcesComponent,
-    LoginComponent
+    LoginComponent,
+    AlertComponent,
+    AuthenticatedHomeComponent,
+    VerifyUserComponent
   ],
   imports: [
     BrowserModule,
@@ -42,15 +54,22 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
     MaterialModule,
     FlexLayoutModule,
     RoutingModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     MatCardModule,
     HttpClientModule,
     HttpClientJsonpModule,
     MatExpansionModule
   ],
-  providers: [],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  providers: [
+    AuthGuard,
+    AlertService,
+    AuthenticationService,
+    UserService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

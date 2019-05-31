@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
 
 @Component({
     selector: 'app-register',
@@ -26,7 +25,7 @@ export class RegisterComponent implements OnInit {
             lastName: ['', Validators.required],
             username: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]],
-            phoneNumber: ['', [Validators.required, Validators.pattern("[0-9]{0-10}")]],
+            phoneNumber: ['', [Validators.required, Validators.pattern("[0-9]{10}")]],
             email: ['', [Validators.required, Validators.email]],
             state: ['', Validators.required],
             describes: [''],
