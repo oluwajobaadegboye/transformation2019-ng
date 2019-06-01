@@ -1,0 +1,15 @@
+.span-title{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1976D2;
+}
+
+.span-date{
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    right: 25px; 
+}
+
+mat-card{
+    margin:5px;
+}

@@ -61,4 +61,12 @@ export class AddAnnouncementComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  save() {
+    this.dialogRef.close(this.makeAnnouncementForm.value);
+  }
+
+  close() {
+    this.dialogRef.close();
+  }
+
 }
