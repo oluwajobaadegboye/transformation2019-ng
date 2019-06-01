@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/AuthenticationService';
 import { AlertService } from 'src/app/services/AlertService';
 import { first } from 'rxjs/operators';
+import { AnnouncementService } from 'src/app/services/AnnouncementService';
 
 @Component({
   selector: 'app-add-announcement',
@@ -25,12 +26,13 @@ export class AddAnnouncementComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
+    private announcementService : AnnouncementService,
     private alertService: AlertService) { }
 
   ngOnInit() {
     this.makeAnnouncementForm = this.formBuilder.group({
-      announcement: ['', Validators.required]
-      // password: ['', Validators.required]
+      message: ['', Validators.required],
+      subject: ['', Validators.required]
     });
   }
 
@@ -45,14 +47,16 @@ export class AddAnnouncementComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
-      .pipe(first())
+    this.announcementService.makeAnnouncent(this.makeAnnouncementForm.value)
+      // .pipe(first())
       .subscribe(
         data => {
-          this.router.navigate(['/ui/auth/home']);
+          alert('Announcement Saved')
+          this.router.navigate(['/ui/announcement']);
         },
         error => {
-          this.alertService.error(error);
+          // this.alertService.error(error);
+          alert('Something went wrong!')
           this.loading = false;
         });
   }

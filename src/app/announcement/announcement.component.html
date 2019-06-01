@@ -1,13 +1,14 @@
 <div>
   <h2 style="color: #1976D2;float: left;">Announcements</h2>
+  <!-- *ngIf="currentUser" -->
   <button *ngIf="currentUser" class="btn btn-primary" (click)="onMakeAnnouncement()" style="float: right;">Add
     Announcement</button>
 </div>
-<br /><br /><br />
+<br /><br /><br /><br />
 <div>
   <mat-card *ngFor="let announcement of announcements" style="text-align: justify;">
-    <span class="span-title">Lunch Time</span>
-    <span class="span-date">06/01/2019 4:30PM</span>
+    <span class="span-title">{{announcement.subject}}</span>
+    <span class="span-date">{{announcement.date}}</span>
     <p>{{announcement.message}}</p>
   </mat-card>
 </div>
