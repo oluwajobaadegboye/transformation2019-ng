@@ -1,4 +1,35 @@
 table {
-    width: 100%;
+	width: 100%;
 }
-  
+
+.mat-column-checkedIn {
+	text-align: center
+}
+
+.mat-column-firstName {
+	text-align: center
+}
+
+.mat-column-lastName {
+	text-align: center
+}
+
+.mat-column-email {
+	text-align: center
+}
+
+.mat-column-state {
+	text-align: center
+}
+
+.mat-column-phoneNumber {
+	text-align: center
+}
+
+.mat-column-roomNumber {
+	text-align: center
+}
+
+.mat-column-actions {
+	text-align: center
+}
