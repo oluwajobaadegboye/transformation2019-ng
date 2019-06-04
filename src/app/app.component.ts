@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AutoLogoutService } from './services/AutoLogoutService';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ang-material-OwnerAccount';
+  title = 'Transformation 2019';
+
+  constructor(
+    private autoLogout: AutoLogoutService
+  ) { }
 }

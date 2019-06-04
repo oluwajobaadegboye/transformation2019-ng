@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
     loading = false;
     submitted = false;
 
-    descriptionOptions : string[] = [
+    descriptionOptions: string[] = [
         'College Student (Undergraduate)',
         'Graduate Student',
         'Employed Full time',
@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
         'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania',
         'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
         'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-      ];
+    ];
 
     constructor(
         private formBuilder: FormBuilder,
@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
             describes: [''],
             diet: [''],
             emergencyContact: [''],
-            // deeperLifeMember: ['']
+            gender: ['', Validators.required]
         });
     }
 
@@ -60,6 +60,7 @@ export class RegisterComponent implements OnInit {
     get f() { return this.registerForm.controls; }
 
     onSubmit() {
+        console.log('form ',this.registerForm.value)
         this.submitted = true;
         // stop here if form is invalid
         if (this.registerForm.invalid) {

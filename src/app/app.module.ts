@@ -35,6 +35,8 @@ import { AssignRoomDialogComponent } from './checkin/assign-room-dialog/assign-r
 import { ScheduleService } from './services/ScheduleService';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { QuestionAndAnswerComponent } from './question-and-answer/question-and-answer.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { AutoLogoutService } from './services/AutoLogoutService';
 
 
 @NgModule({
@@ -56,7 +58,8 @@ import { QuestionAndAnswerComponent } from './question-and-answer/question-and-a
     VerifyUserComponent,
     AddAnnouncementComponent,
     AssignRoomDialogComponent,
-    QuestionAndAnswerComponent
+    QuestionAndAnswerComponent,
+    UserRegistrationComponent
   ],
   entryComponents: [
     AddAnnouncementComponent,
@@ -90,6 +93,7 @@ import { QuestionAndAnswerComponent } from './question-and-answer/question-and-a
     UserService,
     AnnouncementService,
     ScheduleService,
+    AutoLogoutService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],

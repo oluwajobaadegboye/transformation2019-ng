@@ -23,6 +23,10 @@ export class UserService {
         return this.http.post(`${environment.baseUrl}/api/public/registrations`, user);
     }
 
+    createUser(user: any) {
+        return this.http.post(`${environment.baseUrl}/api/users/signup`, user);
+    }
+
     checkIn(id: number) {
         console.log(' checking ID ',id)
         const url = `${environment.baseUrl}/api/registrations/checkin/`+ id;

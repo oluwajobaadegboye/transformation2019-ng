@@ -8,6 +8,7 @@ export class User {
     phoneNumber: string;
     email: string;
     state: string;
+    gender:string;
     describes: string;
     diet: string;
     emergencyContact: string;
