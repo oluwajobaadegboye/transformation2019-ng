@@ -29,11 +29,13 @@ export class LoginComponent implements OnInit {
             password: ['', Validators.required]
         });
 
-        // reset login status
-        // this.authenticationService.logout();
 
-        // get return url from route parameters or default to '/'
-        // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+        // if (this.authenticationService.getCurrentUser()) {
+        //     // reset login status
+        //     this.authenticationService.logout();
+        //     window.location.reload();
+        // }
+
     }
 
     // convenience getter for easy access to form fields
@@ -51,7 +53,8 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate([this.returnUrl]);
+                    // this.router.navigate(['/ui/auth/home']);
+                    window.location.href = "/ui/home"; 
                 },
                 error => {
                     this.alertService.error(error);

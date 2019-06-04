@@ -12,6 +12,7 @@ import { LoginComponent } from '../login/login.component';
 import { AuthGuard } from '../guards/AuthGuard ';
 import { AuthenticatedHomeComponent } from '../authenticated-home/authenticated-home.component';
 import { VerifyUserComponent } from '../verify-user/verify-user.component';
+import { QuestionAndAnswerComponent } from '../question-and-answer/question-and-answer.component';
 
 const routes: Routes = [
   { path: 'ui/home', component: HomeComponent },
@@ -23,13 +24,14 @@ const routes: Routes = [
   { path: 'ui/announcement', component: AnnouncementComponent },
   { path: 'ui/resources', component: ResourcesComponent },
   { path: 'ui/login', component: LoginComponent },
+  { path: 'ui/questionandaswer', component: QuestionAndAnswerComponent },
   { path: 'ui/auth/home', component: AuthenticatedHomeComponent, canActivate: [AuthGuard] },
   { path: 'ui/verify', component: VerifyUserComponent, canActivate: [AuthGuard] },
 ];
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})
   ],
   exports: [
     RouterModule

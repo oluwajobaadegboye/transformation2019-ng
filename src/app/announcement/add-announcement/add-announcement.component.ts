@@ -6,6 +6,9 @@ import { AuthenticationService } from 'src/app/services/AuthenticationService';
 import { AlertService } from 'src/app/services/AlertService';
 import { first } from 'rxjs/operators';
 import { AnnouncementService } from 'src/app/services/AnnouncementService';
+// import swal from 'swal'; 
+
+
 
 @Component({
   selector: 'app-add-announcement',
@@ -19,6 +22,8 @@ export class AddAnnouncementComponent implements OnInit {
   submitted = false;
   returnUrl: string;
 
+
+
   constructor(
     public dialogRef: MatDialogRef<AddAnnouncementComponent>,
     @Inject(MAT_DIALOG_DATA) public dependencies: any,
@@ -26,8 +31,12 @@ export class AddAnnouncementComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private announcementService : AnnouncementService,
-    private alertService: AlertService) { }
+    private announcementService: AnnouncementService,
+    private alertService: AlertService) {
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+  }
 
   ngOnInit() {
     this.makeAnnouncementForm = this.formBuilder.group({
@@ -52,7 +61,13 @@ export class AddAnnouncementComponent implements OnInit {
       .subscribe(
         data => {
           alert('Announcement Saved')
+          // swal(
+          //   'Good job!',
+          //   'Announcement Saved!',
+          //   'success'
+          // );
           this.router.navigate(['/ui/announcement']);
+          this.dialogRef.close();
         },
         error => {
           // this.alertService.error(error);

@@ -40,14 +40,24 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="state">State</label>
             <input type="text" formControlName="state" class="form-control"
                 [ngClass]="{ 'is-invalid': submitted && f.state.errors }" />
             <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
                 <div *ngIf="f.state.errors.required">State is required</div>
             </div>
+        </div> -->
+
+        <!-- <mat-form-field> -->
+        <div class="form-group">
+            <label>State</label>
+            <select class="form-control" formControlName="state">
+                <!-- <option>Select State</option> -->
+                <option *ngFor="let state of states" [value]="state">{{state}}</option>
+            </select>
         </div>
+        <!-- </mat-form-field> -->
 
         <div class="form-group">
             <label for="emergencyContact">Emergency Contact (Name & Number)</label>
@@ -57,6 +67,49 @@
                 <div *ngIf="f.emergencyContact.errors.required">emergencyContact is required</div>
             </div>
         </div>
+
+        <!-- <div class="form-group">
+            <label for="describes">What Best Describes you</label>
+            <input type="text" formControlName="describes" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.describes.errors }" />
+            <div *ngIf="submitted && f.describes.errors" class="invalid-feedback">
+                <div *ngIf="f.describes.errors.required">Field is required</div>
+            </div>
+        </div> -->
+
+        <div class="form-group">
+            <label for="describes">What Best Describes you</label>
+            <select class="form-control" formControlName="describes"
+                [ngClass]="{ 'is-invalid': submitted && f.describes.errors }">
+                <!-- <option>Select State</option> -->
+                <option *ngFor="let option of descriptionOptions" [value]="option">{{option}}</option>
+            </select>
+            <div *ngIf="submitted && f.describes.errors" class="invalid-feedback">
+                <div *ngIf="f.describes.errors.required">Field is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="diet">Diet Preference</label>
+            <input type="text" formControlName="diet" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.emergencyContact.errors }" />
+            <div *ngIf="submitted && f.diet.errors" class="invalid-feedback">
+                <div *ngIf="f.diet.errors.required">Field is required</div>
+            </div>
+        </div>
+
+        <!-- <div class="form-group">
+            <label for="deeperLifeMember">Are you a DLBC member?</label> -->
+        <!-- <select formControlName="deeperLifeMember" class="form-control">
+                <option>Yes</option>
+                <option>No</option>
+            </select> -->
+        <!-- <input type="text" formControlName="deeperLifeMember" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.deeperLifeMember.errors }" />
+            <div *ngIf="submitted && f.deeperLifeMember.errors" class="invalid-feedback">
+                <div *ngIf="f.deeperLifeMember.errors.required">Field is required</div>
+            </div>
+        </div> -->
 
         <!-- 
         <div class="form-group">
@@ -81,7 +134,7 @@
             <button [disabled]="loading" class="btn btn-primary">Register</button>
             <img *ngIf="loading"
                 src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-            <a [routerLink]="['/ui/login']" class="btn btn-link">Cancel</a>
+            <a [routerLink]="['/ui/home']" class="btn btn-link">Cancel</a>
         </div>
     </form>
 </mat-card>

@@ -1,4 +1,10 @@
 <section fxLayout="column" fxFlexAlign="stretch">
+  <!-- <div fxFlexAlign="right" *ngIf="currentUser.name">
+    <strong>{{currentUser.name}}</strong>
+  </div> -->
+  <span style="font-weight: bold;" *ngIf="currentUser">
+    Hi {{userName}}
+  </span>
   <div fxFlexAlign="center">
     <p>Welcome to Transformation 2019</p>
   </div>
@@ -10,9 +16,10 @@
       <p>Thursday Schedules goes here</p>
       <mat-list>
         <mat-divider></mat-divider>
-        <mat-list-item *ngFor="let event of thursdayEventList">
+        <!--   FriScheduleList    SatScheduleList    SunScheduleList -->
+        <mat-list-item *ngFor="let event of thurScheduleList">
           <mat-icon mat-list-icon>schedule_outline</mat-icon>
-          <h4 mat-line><strong>{{event.name}}</strong></h4><span style="position:right;">{{event.time}}</span>
+          <h4 mat-line><strong>{{event.topic}}</strong></h4><span style="position:right;">{{event.time}}</span>
           <p mat-line>{{event.venue}}</p>
           <mat-divider></mat-divider>
         </mat-list-item>
@@ -20,12 +27,41 @@
     </mat-tab>
     <mat-tab label="FRI">
       <p>Friday Schedules goes here</p>
+      <mat-list>
+        <mat-divider></mat-divider>
+        <!--       SatScheduleList    SunScheduleList -->
+        <mat-list-item *ngFor="let event of FriScheduleList">
+          <mat-icon mat-list-icon>schedule_outline</mat-icon>
+          <h4 mat-line><strong>{{event.topic}}</strong></h4><span style="position:right;">{{event.time}}</span>
+          <p mat-line>{{event.venue}}</p>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
     </mat-tab>
     <mat-tab label="SAT">
       <p>Saturday Schedules goes here</p>
+      <mat-list>
+        <mat-divider></mat-divider>
+        <!--           SunScheduleList -->
+        <mat-list-item *ngFor="let event of SatScheduleList">
+          <mat-icon mat-list-icon>schedule_outline</mat-icon>
+          <h4 mat-line><strong>{{event.topic}}</strong></h4><span style="position:right;">{{event.time}}</span>
+          <p mat-line>{{event.venue}}</p>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
     </mat-tab>
     <mat-tab label="SUN">
       <p>Sunday Schedules goes here</p>
+      <mat-list>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let event of SunScheduleList">
+          <mat-icon mat-list-icon>schedule_outline</mat-icon>
+          <h4 mat-line><strong>{{event.topic}}</strong></h4><span style="position:right;">{{event.time}}</span>
+          <p mat-line>{{event.venue}}</p>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
     </mat-tab>
   </mat-tab-group>
 </section>

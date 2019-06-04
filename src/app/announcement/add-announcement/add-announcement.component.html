@@ -17,11 +17,11 @@
   </div>
 
   <div class="form-group">
-    <label for="announcement">Enter Announcement</label>
-    <textarea class="form-control" formControlName="message" id="announcement" rows="6"
-      [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></textarea>
+    <label for="message">Enter Announcement</label>
+    <textarea class="form-control" formControlName="message" rows="6"
+      [ngClass]="{'is-invalid': submitted && f.message.errors}"></textarea>
     <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
-      <div *ngIf="f.title.message.required">Announcement is required</div>
+      <div *ngIf="f.message.errors.required">Announcement is required</div>
     </div>
   </div>
 
@@ -34,5 +34,5 @@
       Close
     </a>
   </div>
-  
+
 </form>

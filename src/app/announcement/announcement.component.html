@@ -8,7 +8,7 @@
 <div>
   <mat-card *ngFor="let announcement of announcements" style="text-align: justify;">
     <span class="span-title">{{announcement.subject}}</span>
-    <span class="span-date">{{announcement.date}}</span>
+    <span class="span-date">{{announcement.date | date:'short'}}</span>
     <p>{{announcement.message}}</p>
   </mat-card>
 </div>

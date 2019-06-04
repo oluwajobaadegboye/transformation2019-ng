@@ -9,13 +9,16 @@
     </div>
     <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
         <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-            <li>
+            <li *ngIf="!currentUser">
                 <a routerLink="/ui/login">Login</a>
+            </li>
+            <li *ngIf="currentUser">
+                <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
             </li>
             <li>
                 <a routerLink="/ui/register">Registration</a>
             </li>
-            <li>
+            <li *ngIf="currentUser">
                 <a routerLink="/ui/checkin">Check-in</a>
             </li>
             <!-- <li>
