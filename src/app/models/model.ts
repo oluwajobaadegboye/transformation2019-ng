@@ -13,6 +13,7 @@ export class User {
     diet: string;
     emergencyContact: string;
     deeperLifeMember: string;
+    role:string;
 }
 
 export class LoggedUser {

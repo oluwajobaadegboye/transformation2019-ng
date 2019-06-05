@@ -14,6 +14,7 @@ import { AuthenticatedHomeComponent } from '../authenticated-home/authenticated-
 import { VerifyUserComponent } from '../verify-user/verify-user.component';
 import { QuestionAndAnswerComponent } from '../question-and-answer/question-and-answer.component';
 import { UserRegistrationComponent } from '../user-registration/user-registration.component';
+import { AdminComponent } from '../admin/admin.component';
 
 const routes: Routes = [
   { path: 'ui/home', component: HomeComponent },
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'ui/questionandaswer', component: QuestionAndAnswerComponent },
   { path: 'ui/auth/home', component: AuthenticatedHomeComponent, canActivate: [AuthGuard] },
   { path: 'ui/verify', component: VerifyUserComponent, canActivate: [AuthGuard] },
-  { path: 'ui/user', component: UserRegistrationComponent, canActivate: [AuthGuard] }
+  { path: 'ui/user', component: UserRegistrationComponent, canActivate: [AuthGuard] },
+  { path: 'ui/admin', component: AdminComponent, canActivate: [AuthGuard] }
 ];
 @NgModule({
   imports: [

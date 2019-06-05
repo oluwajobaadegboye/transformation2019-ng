@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { Injectable, NgZone } from '@angular/core';
 import { AuthenticationService } from './AuthenticationService';
 
-const MINUTES_UNITL_AUTO_LOGOUT = 0.5 // in Minutes
+const MINUTES_UNITL_AUTO_LOGOUT = 30; // in Minutes
 const CHECK_INTERVALL = 1000 // in ms
 const STORE_KEY = 'lastAction';
 
@@ -23,7 +23,7 @@ export class AutoLogoutService {
         return parseInt(localStorage.getItem(STORE_KEY));
     }
     set lastAction(value) {
-        localStorage.setItem(STORE_KEY, ""+value);
+        localStorage.setItem(STORE_KEY, "" + value);
     }
 
     initListener() {
@@ -53,7 +53,8 @@ export class AutoLogoutService {
         this.ngZone.run(() => {
             if (isTimeout && this.auth.getCurrentUser()) {
                 this.auth.logout();
-                this.router.navigate(['/ui/login']);
+                window.location.href = '/ui/login';
+                // this.router.navigate(['/ui/login']);
             }
         });
     }

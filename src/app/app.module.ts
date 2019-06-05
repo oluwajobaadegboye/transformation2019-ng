@@ -33,10 +33,10 @@ import { MatDialogModule, MatDialog, MatDialogRef } from '@angular/material/dial
 import { AnnouncementService } from './services/AnnouncementService';
 import { AssignRoomDialogComponent } from './checkin/assign-room-dialog/assign-room-dialog.component';
 import { ScheduleService } from './services/ScheduleService';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { QuestionAndAnswerComponent } from './question-and-answer/question-and-answer.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { AutoLogoutService } from './services/AutoLogoutService';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -59,7 +59,8 @@ import { AutoLogoutService } from './services/AutoLogoutService';
     AddAnnouncementComponent,
     AssignRoomDialogComponent,
     QuestionAndAnswerComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    AdminComponent
   ],
   entryComponents: [
     AddAnnouncementComponent,
@@ -101,5 +102,3 @@ import { AutoLogoutService } from './services/AutoLogoutService';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-platformBrowserDynamic().bootstrapModule(AppModule);

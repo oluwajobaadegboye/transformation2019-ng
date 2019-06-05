@@ -45,8 +45,8 @@
             <label>Gender</label>
             <select class="form-control" formControlName="gender"
                 [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
-                <option [value]="Male">Male</option>
-                <option [value]="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
             </select>
             <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
                 <div *ngIf="f.gender.errors.required">Gender is required</div>

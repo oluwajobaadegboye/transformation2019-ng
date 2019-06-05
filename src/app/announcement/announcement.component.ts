@@ -53,7 +53,6 @@ export class AnnouncementComponent implements OnInit {
 
     this.announcementService.getAllAnnouncement().subscribe(
       data => {
-        console.log('Data ',data)
         this.announcements = data;
       }
     );

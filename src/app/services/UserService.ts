@@ -11,6 +11,10 @@ export class UserService {
         return this.http.get<User[]>(`${environment.baseUrl}/api/registrations`);
     }
 
+    getAllManagedUser() {
+        return this.http.get<User[]>(`${environment.baseUrl}/api/users`);
+    }
+
     getById(id: number) {
         return this.http.get<User>(`${environment.baseUrl}/api/registrations/` + id);
     }
@@ -28,9 +32,7 @@ export class UserService {
     }
 
     checkIn(id: number) {
-        console.log(' checking ID ',id)
         const url = `${environment.baseUrl}/api/registrations/checkin/`+ id;
-        console.log('URL ',url)
         return this.http.post<CheckingResponse>(url,{});
     }
 

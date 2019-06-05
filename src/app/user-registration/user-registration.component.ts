@@ -33,6 +33,8 @@ export class UserRegistrationComponent implements OnInit {
     });
   }
 
+  get f() { return this.registerForm.controls; }
+
   onSubmit() {
     console.log('form ', this.registerForm.value)
     this.submitted = true;
@@ -41,7 +43,9 @@ export class UserRegistrationComponent implements OnInit {
       return;
     }
     this.loading = true;
-    this.userService.createUser(this.registerForm.value)
+    const user = {...this.registerForm.value,role:this.registerForm.value.roles.toString().replace(/,/g, ';')}
+   
+    this.userService.createUser(user)
       .subscribe(
         data => {
           alert('User Created successful, \nPlease Login');
