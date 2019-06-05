@@ -2,7 +2,153 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 /* for sidenav to take whole page */
+/* html, body { 
+    margin: 0;
+    height: 100%;
+} */
+
 html, body { 
     margin: 0;
     height: 100%;
+}
+
+a, strong, p, span, div, h1, h2, h3, h4 {
+	font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin: 20px !important;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.mat-toolbar.mat-primary {
+    background: #521715;
+    color: #fff;
+    height: 100px;
+    padding-right: 8%;
+}
+
+.navigation-items {
+  font-size: 14px;
+}
+
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  padding: 0px 4%;
+  position: relative;
+}
+
+a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+a.logonav:hover:after { 
+  width: 0%; 
+  left: 0; 
+}
+
+
+form {
+  padding: 50px;
+  padding-top: 20px;
+}
+
+.form-control {
+  line-height: 50px;
+  background: #fafafa;
+  -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 0 22px;
+  font-size: 16px;
+  color: #666;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+
+.btn {
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    /* user-select: none; */
+    border: 1px solid transparent;
+    padding: 0 50px;
+    margin-top: 25px;
+    font-size: 1rem;
+    line-height: 50px;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+label {
+  color: #555;
+  font-size: 15px;
+  font-weight: 700;
+  /*width: 100%;*/
+  /*text-transform: uppercase;*/
+  margin-top: 7px;
+}
+
+.span-title{
+    font-weight: bold;
+    color: #521715;
+}
+
+.span-date{
+    position: absolute;
+    right: 25px; 
+    font-size: 13px;
+    font-style: italic;
+}
+
+mat-card{
+    margin:15px;
+}
+
+.logo-image{
+    position: block;
+    width: auto;
+    max-width: 30%;
+    max-height: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+    margin: 0px;
+    padding: -20%;
+}
+
+p {
+  padding-left: 10px;
+  padding-right: 20px;
 }

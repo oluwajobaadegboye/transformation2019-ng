@@ -4,11 +4,12 @@
   <button *ngIf="currentUser" class="btn btn-primary" (click)="onMakeAnnouncement()" style="float: right;">Add
     Announcement</button>
 </div>
-<br /><br /><br /><br />
+<!-- <br /><br /><br /><br /> -->
 <div>
   <mat-card *ngFor="let announcement of announcements" style="text-align: justify;">
     <span class="span-title">{{announcement.subject}}</span>
     <span class="span-date">{{announcement.date | date:'short'}}</span>
+    <span><hr/></span>
     <p>{{announcement.message}}</p>
   </mat-card>
 </div>
