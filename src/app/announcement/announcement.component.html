@@ -1,10 +1,10 @@
 <div>
   <h2>Announcements</h2>
+  <br /><br />
   <!-- *ngIf="currentUser" -->
-  <button *ngIf="currentUser" class="btn btn-primary" (click)="onMakeAnnouncement()" style="float: right;">Add
-    Announcement</button>
+  <button *ngIf="currentUser" class="btn btn-primary btn-announce" (click)="onMakeAnnouncement()" style="float: right;">New</button>
+
 </div>
-<!-- <br /><br /><br /><br /> -->
 <div>
   <mat-card *ngFor="let announcement of announcements" style="text-align: justify;">
     <span class="span-title">{{announcement.subject}}</span>
