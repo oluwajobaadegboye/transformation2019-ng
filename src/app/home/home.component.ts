@@ -87,9 +87,9 @@ export class HomeComponent implements OnInit {
        "id":7,
        "day":"THU",
        "time":"8.00 PM",
-       "topic":"Ice breaker/Dinner",
+       "topic":"Ice breaker / Dinner",
        "preacher":null,
-       "venue":"Main Hall"
+       "venue":"Main Hall / Cafeteria"
     },
     {  
        "id":8,
@@ -115,7 +115,7 @@ export class HomeComponent implements OnInit {
        "time":"7.30 – 8.30 AM",
        "topic":"Breakfast",
        "preacher":null,
-       "venue":"Main Hall"
+       "venue":"Cafeteria"
     },
     {  
        "id":11,
@@ -155,7 +155,7 @@ export class HomeComponent implements OnInit {
        "time":"12.30 - 1.30 PM",
        "topic":"Lunch",
        "preacher":null,
-       "venue":"Lunch Hall"
+       "venue":"Cafeteria"
     },
     {  
        "id":16,
@@ -163,7 +163,7 @@ export class HomeComponent implements OnInit {
        "time":"01.30 - 3.30 PM",
        "topic":"Recreation",
        "preacher":null,
-       "venue":"Lunch Hall"
+       "venue":"Gym/Outdoor Field"
     },
     {  
        "id":17,
@@ -203,7 +203,7 @@ export class HomeComponent implements OnInit {
        "time":"6.30 – 7.30 PM",
        "topic":"Dinner",
        "preacher":null,
-       "venue":"Main Hall"
+       "venue":"Cafeteria"
     },
     {  
        "id":22,
@@ -253,7 +253,7 @@ export class HomeComponent implements OnInit {
        "time":"8.30 – 09.30 AM",
        "topic":"Breakfast",
        "preacher":null,
-       "venue":"Main Hall"
+       "venue":"Cafeteria"
     },
     {  
        "id":28,
@@ -293,7 +293,7 @@ export class HomeComponent implements OnInit {
        "time":"01.00 – 2.00 PM",
        "topic":"Lunch",
        "preacher":null,
-       "venue":"Main Hall"
+       "venue":"Cafeteria"
     },
     {  
        "id":33,
@@ -301,7 +301,7 @@ export class HomeComponent implements OnInit {
        "time":"02.00 - 3.30 PM",
        "topic":"Recreation",
        "preacher":null,
-       "venue":"Main Hall"
+       "venue":"Gym/Outdoor Field"
     },
     {  
        "id":34,
@@ -341,7 +341,7 @@ export class HomeComponent implements OnInit {
        "time":"6.30 – 7.30 PM",
        "topic":"Dinner",
        "preacher":null,
-       "venue":"Main Hall"
+       "venue":"Cafeteria"
     },
     {  
        "id":39,
@@ -428,7 +428,7 @@ export class HomeComponent implements OnInit {
     {  
        "id":49,
        "day":"SUN",
-       "time":"1.00 – 11.15 AM",
+       "time":"11.00 – 11.15 AM",
        "topic":"Closing prayers/Adjourn",
        "preacher":null,
        "venue":"Main Hall"

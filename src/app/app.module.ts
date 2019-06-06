@@ -37,6 +37,7 @@ import { QuestionAndAnswerComponent } from './question-and-answer/question-and-a
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { AutoLogoutService } from './services/AutoLogoutService';
 import { AdminComponent } from './admin/admin.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { AdminComponent } from './admin/admin.component';
     AssignRoomDialogComponent,
     QuestionAndAnswerComponent,
     UserRegistrationComponent,
-    AdminComponent
+    AdminComponent,
+    FooterComponent
   ],
   entryComponents: [
     AddAnnouncementComponent,
